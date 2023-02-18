@@ -29,18 +29,58 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
+  let newName = "Lucy";
+  if (variables.name !== null) newName = `${variables.name}`;
+
+  let newLastName = "Boilett";
+  if (variables.lastname !== null) newLastName = `${variables.lastname}`;
+
+  let job = `<h2>Web Developer</h2>`;
+  if (variables.role == "Web Developer") job = `<h2>${variables.role}</h2>`;
+  if (variables.role == "Floor Planner") job = `<h2>${variables.role}</h2>`;
+  if (variables.role == "Technical Writter") job = `<h2>${variables.role}</h2>`;
+
+  let mediasPosition = `class="position-right"`;
+
+  if (variables.socialMediaPosition == "position-left")
+    mediasPosition = `class="position-left"`;
+
+  let twitterName = "https://twitter.com/4geeksacademy";
+  if (variables.twitter !== null) twitterName = `${variables.twitter}`;
+
+  let githubName = "https://github.com/4geeksacademy";
+  if (variables.github !== null) githubName = `${variables.github}`;
+
+  let linkedinName = "https://linkedin.com/4geeksacademy";
+  if (variables.linkedin !== null) linkedinName = `${variables.linkedin}`;
+
+  let instagramName = "https://instagram.com/4geeksacademy";
+  if (variables.instagram !== null) instagramName = `${variables.instagram}`;
+
+  let chosenCity = "Miami";
+  if (variables.city == "Miami") chosenCity = `${variables.city}`;
+  if (variables.city == "Munich") chosenCity = `${variables.city}`;
+  if (variables.city == "Caracas") chosenCity = `${variables.city}`;
+  if (variables.city == "Toronto") chosenCity = `${variables.city}`;
+
+  let chosenCountry = "USA";
+  if (variables.country == "USA") chosenCountry = `${variables.country}`;
+  if (variables.country == "Germany") chosenCountry = `${variables.country}`;
+  if (variables.country == "Canada") chosenCountry = `${variables.country}`;
+  if (variables.country == "Venezuela") chosenCountry = `${variables.country}`;
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${newName} ${newLastName}</h1>
+          <h2>${job}</h2>
+          <h3>${variables.city}, ${variables.country}</h3>
+          <ul ${mediasPosition}>
+            <li><a href="${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="${variables.github}"><i class="fab fa-github"></i></a></li>
+            <li><a href="${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
