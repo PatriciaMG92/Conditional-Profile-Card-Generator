@@ -58,16 +58,36 @@ function render(variables = {}) {
   if (variables.instagram !== null) instagramName = `${variables.instagram}`;
 
   let chosenCity = "Miami";
-  if (variables.city == "Miami") chosenCity = `${variables.city}`;
-  if (variables.city == "Munich") chosenCity = `${variables.city}`;
-  if (variables.city == "Caracas") chosenCity = `${variables.city}`;
-  if (variables.city == "Toronto") chosenCity = `${variables.city}`;
+  switch (chosenCity) {
+    case "Miami":
+      chosenCity = `${variables.city}`;
+      break;
+    case "Munich":
+      chosenCity = `${variables.city}`;
+      break;
+    case "Caracas":
+      chosenCity = `${variables.city}`;
+      break;
+    case "Toronto":
+      chosenCity = `${variables.city}`;
+      break;
+  }
 
   let chosenCountry = "USA";
-  if (variables.country == "USA") chosenCountry = `${variables.country}`;
-  if (variables.country == "Germany") chosenCountry = `${variables.country}`;
-  if (variables.country == "Canada") chosenCountry = `${variables.country}`;
-  if (variables.country == "Venezuela") chosenCountry = `${variables.country}`;
+  switch (chosenCountry) {
+    case "USA":
+      chosenCountry = `${variables.country}`;
+      break;
+    case "Germany":
+      chosenCountry = `${variables.country}`;
+      break;
+    case "Canada":
+      chosenCountry = `${variables.country}`;
+      break;
+    case "Venezuela":
+      chosenCountry = `${variables.country}`;
+      break;
+  }
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
