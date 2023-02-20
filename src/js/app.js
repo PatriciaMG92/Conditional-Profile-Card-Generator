@@ -36,12 +36,7 @@ function render(variables = {}) {
   if (variables.lastname !== null) newLastName = `${variables.lastname}`;
 
   let job = "Web Developer";
-  switch (job) {
-    case "Floor Planner":
-      job = `${variables.role}`;
-      break;
-  }
-  //if (variables.role == "Web Developer") job = `${variables.role}`;
+  if (variables.role == "Web Developer") job = `${variables.role}`;
   if (variables.role == "Floor Planner") job = `${variables.role}`;
   if (variables.role == "Technical Writter") job = `${variables.role}`;
 
