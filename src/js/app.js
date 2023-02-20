@@ -35,10 +35,15 @@ function render(variables = {}) {
   let newLastName = "Boilett";
   if (variables.lastname !== null) newLastName = `${variables.lastname}`;
 
-  let job = `<h2>Web Developer</h2>`;
-  if (variables.role == "Web Developer") job = `<h2>${variables.role}</h2>`;
-  if (variables.role == "Floor Planner") job = `<h2>${variables.role}</h2>`;
-  if (variables.role == "Technical Writter") job = `<h2>${variables.role}</h2>`;
+  let job = "Web Developer";
+  switch (job) {
+    case "Floor Planner":
+      job = `${variables.role}`;
+      break;
+  }
+  //if (variables.role == "Web Developer") job = `${variables.role}`;
+  if (variables.role == "Floor Planner") job = `${variables.role}`;
+  if (variables.role == "Technical Writter") job = `${variables.role}`;
 
   let mediasPosition = `class="position-right"`;
 
